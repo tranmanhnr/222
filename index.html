@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Casio fx-580VN X - BlackBerry 10 Optimized</title>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #1a1e24;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        /* Thân máy tối ưu cho màn hình di động BlackBerry */
+        .casio-body {
+            width: 100%;
+            max-width: 380px;
+            background: -webkit-linear-gradient(top, #3a3f44 0%, #22262a 100%);
+            background: linear-gradient(to bottom, #3a3f44 0%, #22262a 100%);
+            border-radius: 20px;
+            padding: 15px 12px 20px 12px;
+            -webkit-box-shadow: 0 10px 25px rgba(0,0,0,0.7), inset 0 1px 3px rgba(255,255,255,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.7), inset 0 1px 3px rgba(255,255,255,0.2);
+            border: 2px solid #111;
+        }
+
+        /* Header thương hiệu */
+        .brand-section {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .brand-logo {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+
+        .model-name {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        /* Màn hình LCD phong cách ClassWiz */
+        .lcd-container {
+            background-color: #c4d0b0;
+            border: 3px solid #4a5246;
+            border-radius: 4px;
+            padding: 6px 10px;
+            min-height: 80px;
+            margin-bottom: 12px;
+            -webkit-box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+        }
+
+        .lcd-top-indicators {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            font-size: 10px;
+            color: #222;
+            font-weight: bold;
+        }
+
+        .lcd-screen {
+            font-family: monospace;
+            color: #111;
+            text-align: right;
+            word-break: break-all;
+        }
+
+        .lcd-expression {
+            font-size: 13px;
+            color: #444;
+            min-height: 18px;
+        }
+
+        .lcd-result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        /* Hàng phím chức năng trên */
+        .top-controls {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .btn-shift { background-color: #b2bec3 !important; color: #2d3436 !important; }
+        .btn-alpha { background-color: #fab1a0 !important; color: #d63031 !important; }
+        .btn-menu, .btn-on { background-color: #dfe6e9 !important; color: #2d3436 !important; font-size: 10px !important; }
+
+        /* Vòng điều hướng */
+        .nav-row {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .nav-ring {
+            background: #15181b;
+            padding: 3px;
+            border-radius: 15px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-btn {
+            background-color: #4a525d;
+            color: white;
+            border: none;
+            padding: 4px 10px;
+            font-size: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Bàn phím chính chuẩn lưới 5 cột */
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+        }
+
+        .key {
+            background: -webkit-linear-gradient(top, #f5f6fa, #dcdde1);
+            background: linear-gradient(to bottom, #f5f6fa, #dcdde1);
+            border: none;
+            border-radius: 4px;
+            padding: 8px 2px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #2f3640;
+            cursor: pointer;
+            -webkit-box-shadow: 0 2px 0 #b2bec3, 0 3px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 0 #b2bec3, 0 3px 4px rgba(0,0,0,0.2);
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            height: 40px;
+        }
+
+        .key:active {
+            -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+            -webkit-box-shadow: 0 0 0 #b2bec3, 0 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 0 0 #b2bec3, 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .key .shift-label {
+            position: absolute;
+            top: 1px;
+            left: 3px;
+            font-size: 7px;
+            color: #d63031;
+            font-weight: bold;
+        }
+
+        /* Màu sắc phím đặc biệt */
+        .btn-op-special {
+            background: -webkit-linear-gradient(top, #74b9ff, #0984e3) !important;
+            background: linear-gradient(to bottom, #74b9ff, #0984e3) !important;
+            color: white !important;
+            -webkit-box-shadow: 0 2px 0 #0056b3, 0 3px 4px rgba(0,0,0,0.2) !important;
+            box-shadow: 0 2px 0 #0056b3, 0 3px 4px rgba(0,0,0,0.2) !important;
+        }
+
+        .btn-del {
+            background: -webkit-linear-gradient(top, #fdcb6e, #e1b12c) !important;
+            background: linear-gradient(to bottom, #fdcb6e, #e1b12c) !important;
+            color: #2f3640 !important;
+            -webkit-box-shadow: 0 2px 0 #b7950b, 0 3px 4px rgba(0,0,0,0.2) !important;
+            box-shadow: 0 2px 0 #b7950b, 0 3px 4px rgba(0,0,0,0.2) !important;
+            font-weight: bold;
+        }
+
+        .btn-ac {
+            background: -webkit-linear-gradient(top, #ff7675, #d63031) !important;
+            background: linear-gradient(to bottom, #ff7675, #d63031) !important;
+            color: white !important;
+            -webkit-box-shadow: 0 2px 0 #c0392b, 0 3px 4px rgba(0,0,0,0.2) !important;
+            box-shadow: 0 2px 0 #c0392b, 0 3px 4px rgba(0,0,0,0.2) !important;
+            font-weight: bold;
+        }
+
+        .btn-equals {
+            background: -webkit-linear-gradient(top, #55efc4, #00b894) !important;
+            background: linear-gradient(to bottom, #55efc4, #00b894) !important;
+            color: white !important;
+            -webkit-box-shadow: 0 2px 0 #00876c, 0 3px 4px rgba(0,0,0,0.2) !important;
+            box-shadow: 0 2px 0 #00876c, 0 3px 4px rgba(0,0,0,0.2) !important;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .mod-tip {
+            margin-top: 12px;
+            background: rgba(255,255,255,0.06);
+            padding: 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            color: #dfe6e9;
+            text-align: center;
+        }
+        .mod-tip code {
+            color: #55efc4;
+            background: rgba(0,0,0,0.4);
+            padding: 1px 3px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="casio-body">
+    <div class="brand-section">
+        <div class="brand-logo">CASIO</div>
+        <div class="model-name">CLASSWIZ fx-580VN X</div>
+    </div>
+
+    <div class="lcd-container">
+        <div class="lcd-top-indicators">
+            <span id="ind-shift"></span>
+            <span id="ind-alpha"></span>
+            <span id="ind-mode">BB10 VIP</span>
+        </div>
+        <div class="lcd-screen">
+            <div class="lcd-expression" id="expression">0</div>
+            <div class="lcd-result" id="result"></div>
+        </div>
+    </div>
+
+    <div class="top-controls">
+        <button class="key btn-shift" onclick="toggleShift()">SHIFT</button>
+        <button class="key btn-alpha" onclick="toggleAlpha()">ALPHA</button>
+        <button class="key btn-menu" onclick="appendInput('MENU')">MENU</button>
+        <button class="key btn-on" onclick="clearAll()">ON</button>
+    </div>
+
+    <div class="nav-row">
+        <div class="nav-ring">
+            <button class="nav-btn" onclick="appendInput('▲')">▲</button>
+            <button class="nav-btn" onclick="appendInput('▼')">▼</button>
+            <button class="nav-btn" onclick="appendInput('◀')">◀</button>
+            <button class="nav-btn" onclick="appendInput('▶')">▶</button>
+        </div>
+    </div>
+
+    <div class="keypad">
+        <button class="key" onclick="appendInput('OPTN')">OPTN</button>
+        <button class="key" onclick="appendInput('CALC')"><span class="shift-label">SOLVE</span>CALC</button>
+        <button class="key" onclick="appendInput('∫')"><span class="shift-label">dx</span>∫</button>
+        <button class="key" onclick="appendInput('x')"><span class="shift-label">:</span>x</button>
+        <button class="key btn-del" onclick="deleteChar()">DEL</button>
+
+        <button class="key" onclick="appendInput('frac')"><span class="shift-label">a/b</span>◼/◼</button>
+        <button class="key" onclick="appendInput('√')"><span class="shift-label">∛</span>√</button>
+        <button class="key" onclick="appendInput('^2')"><span class="shift-label">x³</span>x²</button>
+        <button class="key" onclick="appendInput('^')"><span class="shift-label">x^</span>^</button>
+        <button class="key btn-ac" onclick="clearAll()">AC</button>
+
+        <button class="key" onclick="appendInput('(-)')"><span class="shift-label">CONST</span>(-)</button>
+        <button class="key" onclick="appendInput('°')"><span class="shift-label">°’”</span>°’”</button>
+        <button class="key" onclick="appendInput('x^-1')"><span class="shift-label">x!</span>x⁻¹</button>
+        <button class="key" onclick="appendInput('sin')">sin</button>
+        <button class="key" onclick="appendInput('cos')">cos</button>
+
+        <button class="key" onclick="appendInput('tan')">tan</button>
+        <button class="key" onclick="appendInput('STO')"><span class="shift-label">RCL</span>STO</button>
+        <button class="key" onclick="appendInput('(')">(</button>
+        <button class="key" onclick="appendInput(')')">)</button>
+        <button class="key btn-op-special" onclick="appendInput(' mod ')">MOD</button>
+
+        <button class="key" onclick="appendInput('7')">7</button>
+        <button class="key" onclick="appendInput('8')">8</button>
+        <button class="key" onclick="appendInput('9')">9</button>
+        <button class="key btn-op-special" onclick="appendInput('×')">×</button>
+        <button class="key btn-op-special" onclick="appendInput('÷')">÷</button>
+
+        <button class="key" onclick="appendInput('4')">4</button>
+        <button class="key" onclick="appendInput('5')">5</button>
+        <button class="key" onclick="appendInput('6')">6</button>
+        <button class="key btn-op-special" onclick="appendInput('+')">+</button>
+        <button class="key btn-op-special" onclick="appendInput('-')">-</button>
+
+        <button class="key" onclick="appendInput('1')">1</button>
+        <button class="key" onclick="appendInput('2')">2</button>
+        <button class="key" onclick="appendInput('3')">3</button>
+        <button class="key" onclick="appendInput('Ans')">Ans</button>
+        <button class="key btn-equals" onclick="calculate()">=</button>
+
+        <button class="key" onclick="appendInput('0')">0</button>
+        <button class="key" onclick="appendInput('.')">.</button>
+        <button class="key" onclick="appendInput('×10^')">×10ˣ</button>
+        <button class="key" onclick="appendInput('π')">π</button>
+        <button class="key" onclick="appendInput('e')">e</button>
+    </div>
+
+    <div class="mod-tip">
+        💡 Số lớn: Gõ <code>3 ^ 37 mod 19</code> rồi bấm <code>=</code>
+    </div>
+</div>
+
+<script>
+    var currentExpression = "";
+    var isShiftActive = false;
+
+    function toggleShift() {
+        isShiftActive = !isShiftActive;
+        document.getElementById('ind-shift').innerText = isShiftActive ? "SHIFT" : "";
+    }
+
+    function toggleAlpha() {
+        document.getElementById('ind-alpha').innerText = document.getElementById('ind-alpha').innerText ? "" : "ALPHA";
+    }
+
+    function clearAll() {
+        currentExpression = "";
+        isShiftActive = false;
+        document.getElementById('ind-shift').innerText = "";
+        document.getElementById('ind-alpha').innerText = "";
+        document.getElementById('expression').innerText = "0";
+        document.getElementById('result').innerText = "";
+    }
+
+    function deleteChar() {
+        if (currentExpression.length > 0) {
+            currentExpression = currentExpression.slice(0, -1);
+            document.getElementById('expression').innerText = currentExpression || "0";
+        }
+    }
+
+    function appendInput(val) {
+        if (currentExpression === "0" && val !== " mod ") {
+            currentExpression = val;
+        } else {
+            currentExpression += val;
+        }
+        document.getElementById('expression').innerText = currentExpression;
+    }
+
+    // Thuật toán lũy thừa nhị phân BigInt tối ưu cho BB10
+    function bigIntPowerMod(base, exp, mod) {
+        var res = 1n;
+        base = base % mod;
+        while (exp > 0n) {
+            if (exp % 2n === 1n) {
+                res = (res * base) % mod;
+            }
+            base = (base * base) % mod;
+            exp /= 2n;
+        }
+        return res;
+    }
+
+    function calculate() {
+        try {
+            var expr = currentExpression
+                .replace(/×/g, '*')
+                .replace(/÷/g, '/')
+                .replace(/\^/g, '**');
+
+            // Xử lý phép chia lấy dư số lớn: a ^ b mod n
+            var modMatch = expr.match(/(\d+)\s*\*\*\s*(\d+)\s+mod\s+(\d+)/i);
+            if (modMatch) {
+                var base = BigInt(modMatch[1]);
+                var exp = BigInt(modMatch[2]);
+                var mod = BigInt(modMatch[3]);
+                var result = bigIntPowerMod(base, exp, mod);
+                document.getElementById('result').innerText = result.toString();
+                return;
+            }
+
+            // Xử lý mod thông thường
+            if (expr.toLowerCase().indexOf('mod') !== -1) {
+                var parts = expr.split(/mod/i);
+                if (parts.length === 2) {
+                    var leftVal = Function('"use strict"; return (' + parts[0] + ')')();
+                    var rightVal = Function('"use strict"; return (' + parts[1] + ')')();
+                    var res = BigInt(Math.round(leftVal)) % BigInt(Math.round(rightVal));
+                    document.getElementById('result').innerText = res.toString();
+                    return;
+                }
+            }
+
+            var evalResult = eval(expr);
+            if (typeof evalResult === 'number' && !Number.isInteger(evalResult)) {
+                evalResult = parseFloat(evalResult.toFixed(10));
+            }
+            document.getElementById('result').innerText = evalResult;
+        } catch (error) {
+            document.getElementById('result').innerText = "Math ERROR";
+        }
+    }
+</script>
+
+</body>
+</html>
